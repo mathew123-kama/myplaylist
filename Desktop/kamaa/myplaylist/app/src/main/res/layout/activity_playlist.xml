@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_img"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".playlist">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtsongname"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+            android:padding="5dp"
+            android:layout_margin="10dp"
+            android:text="Song Name"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:fontFamily="sans-serif">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/imagev"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/marley">
+        </ImageView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            >
+            <SeekBar
+                android:layout_width="250dp"
+                android:id="@+id/seekbar"
+                android:layout_margin="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="35dp"
+                android:layout_height="wrap_content">
+
+            </SeekBar>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textstart"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="false"
+                android:layout_toLeftOf="@id/seekbar"
+                android:layout_marginLeft="40dp"
+                android:text="0:00"
+                android:textSize="14sp"
+                android:textColor="#fff">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textstop"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="false"
+                android:layout_toRightOf="@id/seekbar"
+                android:layout_marginRight="40dp"
+                android:text="4:10"
+                android:textSize="14sp"
+                android:textColor="#fff">
+
+            </TextView>
+
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/play"
+                    android:background="@drawable/ic_pause"
+                    android:layout_centerHorizontal="true">
+                </Button>
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/next"
+                    android:layout_toRightOf="@id/play"
+                    android:background="@drawable/ic_next"
+                    android:layout_marginTop="10dp">
+
+                </Button>
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/prev"
+                    android:layout_toLeftOf="@id/play"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ic_prev">
+
+                </Button>
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/forward"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@id/next"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ic_forward">
+
+                </Button>
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/backward"
+                    android:layout_marginTop="20dp"
+                    android:layout_toLeftOf="@id/prev"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/ic_backward">
+
+                </Button>
+                <com.gauravk.audiovisualizer.visualizer.BarVisualizer
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/blast"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                custom:avDensity="0.6"
+                custom:avType="outline"
+                    custom:avWidth="35dp"
+                    custom:avColor="#ff362E"
+                custom:avSpeed="normal"/>
+            </RelativeLayout>
+        </LinearLayout>
+            
+
+    </LinearLayout>
+</LinearLayout>
